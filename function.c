@@ -28,7 +28,7 @@ void pop(stack_t **stack, unsigned int line)
 	char *c;
 	stack_t *curr = *stack;
 
-	if (head == NULL)
+	if (*stack == NULL)
 	{
 		c = to_st(line);
 		err("L"), err(c), err(": can't pop an empty stack\n");
@@ -65,9 +65,9 @@ void push(stack_t **stack, unsigned int line)
 	stack_t *node, *new;
 
 	new = malloc(sizeof(stack_t));
-	new->n = _atoi(value);
+	/*new->n = _atoi(value);
 	new->next = NULL;
 	node = *stack;
 	*stack = new;
-	new->prev = node;
+	new->prev = node;*/
 }

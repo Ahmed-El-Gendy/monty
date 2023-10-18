@@ -18,14 +18,14 @@ int main(int argc, char *argv[])
 	if (argc != 2)
 	{
 		err("Usage: "), err(argv[0]);
-		free(stack), free(line);
+		free(*stack), free(line);
 		return (EXIT_FAILURE);
 	}
 	file = fopen(argv[1], "r");
 	if (file == NULL)
 	{
 		err("Error: Can't open file "), err(argv[1]);
-		free(stack), free(line);
+		free(*stack), free(line);
 		return (EXIT_FAILURE);
 	}
 	while ((read = getline(&line, &len, file)) != -1)
@@ -38,6 +38,6 @@ int main(int argc, char *argv[])
 		selectf(head, token, line_number);
 	}
 	fclose(file);
-	free(stack), free(line);
+	free(*stack), free(line);
 	return (EXIT_SUCCESS);
 }
