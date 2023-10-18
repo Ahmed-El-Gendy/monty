@@ -1,33 +1,56 @@
 #include "monty.h"
-
 /**
- * push - push elements to stack
- * @value: the value
+ * pint - print the top
+ * @line: line numper
  * Return: void
  */
-void push(int value, int **stack, int *top)
+void pint(int line)
 {
-	if ((*top) < 1000 - 1)
+	char *c;
+
+	if (head == NULL)
 	{
-		(*stack)[++(*top)] = value;
-	}
-	else
-	{
-		printf("Error: Stack overflow\n");
+		c = to_st(line);
+		err("L"), err(c), err(": can't pint, stack empty\n");
+		free(c);
 		exit(EXIT_FAILURE);
 	}
+	printf("%d/n", (*head)->n);
 }
 
 /**
- * pall - print all elements from stack
+ * pop - pop the top
+ * @line: line numper
  * Return: void
  */
-void pall(int *stack, int top)
+void pop(int line)
 {
-	int i;
+	char *c;
+	stack_t *curr = *head;
 
-	for (i = top; i >= 0; i--)
+	if (head == NULL)
 	{
-		printf("%d\n", stack[i]);
+		c = to_st(line);
+		err("L"), err(c), err(": can't pop an empty stack\n");
+		free(c);
+		exit(EXIT_FAILURE);
+	}
+	curr->prev->next = NULL;
+	free(current);
+}
+/**
+ * pall - print the stack
+ * @line: line numper
+ * Return: void
+ */
+void pall(int line)
+{
+	char *c;
+	stack_t *curr = *head;
+
+	while (curr)
+	{
+		printf("%d\n", h->n);
+		curr = curr->prev;
 	}
 }

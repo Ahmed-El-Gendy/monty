@@ -9,15 +9,14 @@
 
 int main(int argc, char *argv[])
 {
-	int *stack, top = -1;
+	int *stack;
 	char *line, *token;
-	int line_number = 0;
+	unsigned int line_number = 0;
 	FILE *file;
 	char **arr;
-
+	ssize_t read, len = 0;
 
 	stack = malloc(sizeof(int) * 1000);
-	line = malloc(sizeof(char) * 100);
 
 	if (argc != 2)
 	{
@@ -32,8 +31,9 @@ int main(int argc, char *argv[])
 		free(stack), free(line);
 		return (EXIT_FAILURE);
 	}
-	while (fgets(line, sizeof(line), file))
+	while ((read = getline(&line, &len, file)) != -1)
 	{
+		printf("%s\n", line);
 		arr = malloc(sizeof(char *) * 10);
 		line_number++;
 		token = strtok(line, " \t\n");

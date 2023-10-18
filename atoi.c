@@ -1,4 +1,4 @@
-#include "main.h"
+#include "monty.h"
 /**
 * _atoi - Convert string to an integer.
 * @string: Pointer to a character string.
@@ -12,7 +12,7 @@ int _atoi(char *string)
 	unsigned int number;
 	char *final;
 
-	final = s;
+	final = string;
 	number = 0;
 	sign = 1;
 	while (*final != '\0' && (*final < '0' || *final > '9'))
