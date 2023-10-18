@@ -7,7 +7,7 @@
 void selectf(char **array, unsigned int line_num)
 {
 	int i = 0;
-	char *line = tost(line_num);
+	char *line = to_st(line_num);
 	instruction_t arr[] = {
 		{"push", push}, 
 		{"pall", pall}

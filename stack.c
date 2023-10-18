@@ -41,8 +41,8 @@ int main(int argc, char *argv[])
 			continue;
 		arr[0] = token;
 		token = strtok(NULL, " \t\n");
-		arr[1] = token;
-		select(arr, line_number);
+		value = token;
+		selectf(arr, line_number);
 	}
 	fclose(file);
 	free(stack), free(line);
