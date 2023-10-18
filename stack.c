@@ -43,7 +43,6 @@ int main(int argc, char *argv[])
 			token = strtok(NULL, " \t\n");
 			if (token == NULL)
 			{
-				printf("L%d: usage: push integer\n", line_number);
 				err("L"), err(to_st(line_number)), err(": usage: push integer\n");
 				free(stack), free(line);
 				return (EXIT_FAILURE);
