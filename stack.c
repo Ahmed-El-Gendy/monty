@@ -21,13 +21,15 @@ int main(int argc, char *argv[])
 
 	if (argc != 2)
 	{
-		printf("Usage: %s <filename>\n", argv[0]);
+		err("Usage: "), err(argv[0]);
+		free(stack), free(line);
 		return (EXIT_FAILURE);
 	}
 	file = fopen(argv[1], "r");
 	if (file == NULL)
 	{
-		printf("Error: Can't open file %s\n", argv[1]);
+		err("Error: Can't open file "), err(argv[1]);
+		free(stack), free(line);
 		return (EXIT_FAILURE);
 	}
 	while (fgets(line, sizeof(line), file))
@@ -42,6 +44,8 @@ int main(int argc, char *argv[])
 			if (token == NULL)
 			{
 				printf("L%d: usage: push integer\n", line_number);
+				err("L"), err(to_st(line_number)), err(": usage: push integer\n");
+				free(stack), free(line);
 				return (EXIT_FAILURE);
 			}
 			push(atoi(token), &stack, &top);
@@ -52,10 +56,13 @@ int main(int argc, char *argv[])
 		}
 		else
 		{
-			printf("L%d: unknown instruction %s\n", line_number, token);
+			err("L"), err(to_st(line_number)), err("d: unknown instruction ");
+			err(token), err("\n");
+			free(stack), free(line);
 			return (EXIT_FAILURE);
 		}
 	}
 	fclose(file);
+	free(stack), free(line);
 	return (EXIT_SUCCESS);
 }

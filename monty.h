@@ -43,7 +43,7 @@ int _strlen(char *s);
 int _putchar(char c);
 void _puts(char *str);
 int cmp(char *input1, char *input2);
-
+void err(char *st);
 
 
 

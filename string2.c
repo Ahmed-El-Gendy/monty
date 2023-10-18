@@ -35,3 +35,13 @@ int _putchar(char c)
 {
 	return (write(1, &c, 1));
 }
+
+/**
+ * err - print error
+ * @st: string
+ * Return: void
+ */
+void err(char *st)
+{
+	write(2, st, _strlen(st));
+}
