@@ -1,6 +1,4 @@
 #include "monty.h"
-#define STACK_SIZE 1000
-#define MAX_LINE_LENGTH 100
 
 /**
  * main - the main function
@@ -15,6 +13,8 @@ int main(int argc, char *argv[])
 	char *line, *token;
 	int line_number = 0;
 	FILE *file;
+	char **arr;
+
 
 	stack = malloc(sizeof(int) * 1000);
 	line = malloc(sizeof(char) * 100);
@@ -34,32 +34,15 @@ int main(int argc, char *argv[])
 	}
 	while (fgets(line, sizeof(line), file))
 	{
+		arr = malloc(sizeof(char *) * 10);
 		line_number++;
 		token = strtok(line, " \t\n");
 		if (token == NULL)
 			continue;
-		if (cmp(token, "push") == 1)
-		{
-			token = strtok(NULL, " \t\n");
-			if (token == NULL)
-			{
-				err("L"), err(to_st(line_number)), err(": usage: push integer\n");
-				free(stack), free(line);
-				return (EXIT_FAILURE);
-			}
-			push(atoi(token), &stack, &top);
-		}
-		else if ((cmp(token, "pall") == 1) || (cmp(token, "pall$") == 1))
-		{
-			pall(stack, top);
-		}
-		else
-		{
-			err("L"), err(to_st(line_number)), err("d: unknown instruction ");
-			err(token), err("\n");
-			free(stack), free(line);
-			return (EXIT_FAILURE);
-		}
+		arr[0] = token;
+		token = strtok(NULL, " \t\n");
+		arr[1] = token;
+		select(arr, line_number);
 	}
 	fclose(file);
 	free(stack), free(line);
