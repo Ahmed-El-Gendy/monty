@@ -43,7 +43,7 @@ int main(int argc, char *argv[])
 			}
 			push(atoi(token), &stack, &top);
 		}
-		else if (cmp(token, "pall") == 1)
+		else if ((cmp(token, "pall") == 1) || (cmp(token, "pall$") == 1))
 		{
 			pall(stack, top);
 		}
