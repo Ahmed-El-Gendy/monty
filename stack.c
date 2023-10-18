@@ -11,10 +11,13 @@
 
 int main(int argc, char *argv[])
 {
-	int stack[STACK_SIZE], top = -1;
-	char line[MAX_LINE_LENGTH], *token;
+	int *stack, top = -1;
+	char *line, *token;
 	int line_number = 0;
 	FILE *file;
+
+	stack = malloc(sizeof(int) * 1000);
+	line = malloc(sizeof(char) * 100);
 
 	if (argc != 2)
 	{

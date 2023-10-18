@@ -36,8 +36,8 @@ typedef struct instruction_s
 } instruction_t;
 
 
-void push(int value, int (*stack)[], int *top);
-void pall(int stack[], int top);
+void push(int value, int **stack, int *top);
+void pall(int *stack, int top);
 char *to_st(int now);
 int _strlen(char *s);
 int _putchar(char c);

@@ -5,7 +5,7 @@
  * @value: the value
  * Return: void
  */
-void push(int value, int (*stack)[], int *top)
+void push(int value, int **stack, int *top)
 {
 	if ((*top) < 1000 - 1)
 	{
@@ -22,7 +22,7 @@ void push(int value, int (*stack)[], int *top)
  * pall - print all elements from stack
  * Return: void
  */
-void pall(int stack[], int top)
+void pall(int *stack, int top)
 {
 	int i;
 
