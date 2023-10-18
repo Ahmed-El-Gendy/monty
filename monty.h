@@ -21,8 +21,6 @@ typedef struct stack_s
 	struct stack_s *next;
 } stack_t;
 
-extern stack_t *head;
-extern char *value;
 
 /**
  * struct instruction_s - opcode and its function
@@ -40,8 +38,8 @@ typedef struct instruction_s
 
 void push(stack_t **stack, unsigned int line);
 
-void pint(int line);
-void pop(int line);
+void pint(stack_t **stack, unsigned int line);
+void pop(stack_t **stack, unsigned int line);
 void pall(stack_t **stack, unsigned int line);
 char *to_st(int now);
 int _strlen(char *s);
@@ -50,7 +48,7 @@ void _puts(char *str);
 int cmp(char *input1, char *input2);
 void err(char *st);
 int _atoi(char *string);
-void selectf(char **array, unsigned int line_num);
+void selectf(stack_t *head, char *st, unsigned int line_num);
 
 
 

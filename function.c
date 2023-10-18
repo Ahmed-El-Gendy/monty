@@ -4,7 +4,7 @@
  * @line: line numper
  * Return: void
  */
-void pint(int line)
+void pint(stack_t **stack, unsigned int line)
 {
 	char *c;
 
@@ -15,7 +15,7 @@ void pint(int line)
 		free(c);
 		exit(EXIT_FAILURE);
 	}
-	printf("%d/n", head->n);
+	printf("%d/n", (*stack)->n);
 }
 
 /**
@@ -23,10 +23,10 @@ void pint(int line)
  * @line: line numper
  * Return: void
  */
-void pop(int line)
+void pop(stack_t **stack, unsigned int line)
 {
 	char *c;
-	stack_t *curr = head;
+	stack_t *curr = *stack;
 
 	if (head == NULL)
 	{
@@ -46,9 +46,7 @@ void pop(int line)
 void pall(stack_t **stack, unsigned int line)
 {
 	char *c;
-	stack_t *curr = head;
-
-	*stack = head;
+	stack_t *curr = *stack;
 
 	while (curr)
 	{
@@ -66,11 +64,10 @@ void push(stack_t **stack, unsigned int line)
 {
 	stack_t *node, *new;
 
-	*stack = head;
 	new = malloc(sizeof(stack_t));
 	new->n = _atoi(value);
 	new->next = NULL;
-	node = head;
-	head = new;
+	node = *stack;
+	*stack = new;
 	new->prev = node;
 }

@@ -9,14 +9,11 @@
 
 int main(int argc, char *argv[])
 {
-	int *stack;
 	char *line, *token;
 	unsigned int line_number = 0;
 	FILE *file;
-	char **arr;
 	ssize_t read, len = 0;
-
-	stack = malloc(sizeof(int) * 1000);
+	stack_t *head;
 
 	if (argc != 2)
 	{
@@ -33,16 +30,12 @@ int main(int argc, char *argv[])
 	}
 	while ((read = getline(&line, &len, file)) != -1)
 	{
-		printf("%s\n", line);
-		arr = malloc(sizeof(char *) * 10);
+		
 		line_number++;
 		token = strtok(line, " \t\n");
 		if (token == NULL)
 			continue;
-		arr[0] = token;
-		token = strtok(NULL, " \t\n");
-		value = token;
-		selectf(arr, line_number);
+		selectf(head, token, line_number);
 	}
 	fclose(file);
 	free(stack), free(line);
