@@ -17,7 +17,9 @@ void pushs(stack_t **stack, unsigned int num)
 		write(2, l, _strlen(l));
 		write(2, ": usage: push integer", _strlen(": usage: push integer"));
 		write(2, "\n", 1);
+		free(val);
 		free(l);
+		free_stack(*stack);
 		exit(EXIT_FAILURE);
 	}
 	else if (!check(val))
@@ -26,7 +28,9 @@ void pushs(stack_t **stack, unsigned int num)
 		write(2, l, _strlen(l));
 		write(2, ": usage: push integer", _strlen(": usage: push integer"));
 		write(2, "\n", 1);
+		free(val);
 		free(l);
+		free_stack(*stack);
 		exit(EXIT_FAILURE);
 	}
 	else
