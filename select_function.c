@@ -6,7 +6,7 @@
  * @li: int
  * @line_num: line number of the file
  */
-void selectf(stack_t **s, char *token, unsigned int line_num, char *li,FILE *file)
+void selectf(stack_t **s, char *token, unsigned int line_num, char *li)
 {
 	int i = 0;
 	char *line = to_st(line_num);
@@ -41,6 +41,6 @@ void selectf(stack_t **s, char *token, unsigned int line_num, char *li,FILE *fil
 	write(2, "\n", 1);
 	free(li);
 	free_stack(*s);
-	free(line), fclose(file);
+	free(line);
 	exit(EXIT_FAILURE);
 }

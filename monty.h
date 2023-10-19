@@ -56,7 +56,7 @@ void _puts(char *str);
 int cmp(char *input1, char *input2);
 void err(char *st);
 int _atoi(char *string);
-void selectf(stack_t **st, char *token, unsigned int line_num, char *li, FILE *file);
+void selectf(stack_t **st, char *token, unsigned int line_num, char *li);
 int len(char **array);
 int check(char *st);
 void free_stack(stack_t *stack);
