@@ -1,6 +1,5 @@
 #include "monty.h"
-void free_stack(stack_t *stack);
-glob global = {NULL, NULL};
+
 /**
  * free_stack - free
  * @stack: top
