@@ -19,7 +19,7 @@ void mods(stack_t **stack, unsigned int line_num)
 	}
 	if ((*stack)->n == 0)
 	{
-		err("L"), err(st), err(": division by zero");
+		err("L"), err(st), err(": division by zero\n");
 		free(st);
 		free_stack(*stack);
 		exit(EXIT_FAILURE);
