@@ -8,6 +8,7 @@ char *to_st(int now)
 {
 	char *st, *str;
 	int i = 0, j;
+	int u = 0;
 
 	st = malloc(sizeof(char) * 20);
 	if (now == 0)
@@ -16,6 +17,8 @@ char *to_st(int now)
 		st[1] = '\0';
 		return (st);
 	}
+	if (now < 0)
+		u = 1, now *= -1;
 	while (now != 0)
 	{
 		st[i] = (now % 10) + '0';
@@ -24,7 +27,13 @@ char *to_st(int now)
 	}
 	st[i] = '\0';
 	str = malloc(sizeof(char) * 20);
-	for (j = _strlen(st) - 1, i = 0; j >= 0; i++, j--)
+	i = 0;
+	if (u)
+	{
+		str[i] = '-';
+		i = 1;
+	}
+	for (j = _strlen(st) - 1; j >= 0; i++, j--)
 		str[i] = st[j];
 	str[i] = '\0';
 	free(st);
