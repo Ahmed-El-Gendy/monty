@@ -2,4 +2,6 @@
 push 2
 pint 
 push  5    
-push
+push 6
+pall
+nop
