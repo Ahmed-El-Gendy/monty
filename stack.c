@@ -8,7 +8,7 @@ glob global = {NULL, NULL};
  * Return: int
  */
 
-int main(int argc, char *argv[])
+int main(int argc, char **argv)
 {
 	char *token = NULL;
 	unsigned int line_number = 0;
