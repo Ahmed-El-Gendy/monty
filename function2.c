@@ -40,6 +40,12 @@ void divs(stack_t **stack, unsigned int line_num)
 		free_stack(*stack);
 		exit(EXIT_FAILURE);
 	}
+	if ((*stack)->n == 0)
+	{
+		err("L"), err(st), err(": division by zero\n");
+		free(st), free_stack(*stack);
+		exit(EXIT_FAILURE);
+	}
 	free(st);
 	temp2 = (*stack)->next;
 	temp2->n /= (*stack)->n;
