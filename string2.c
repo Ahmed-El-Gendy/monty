@@ -10,7 +10,7 @@ char *to_st(int now)
 	int i = 0, j;
 	int u = 0;
 
-	st = malloc(sizeof(char) * 20);
+	st = malloc(sizeof(char) * 20000);
 	if (now == 0)
 	{
 		st[0] = '0';
@@ -26,7 +26,7 @@ char *to_st(int now)
 		i++;
 	}
 	st[i] = '\0';
-	str = malloc(sizeof(char) * 20);
+	str = malloc(sizeof(char) * 20000);
 	i = 0;
 	if (u)
 	{
