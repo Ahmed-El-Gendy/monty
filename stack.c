@@ -1,5 +1,5 @@
 #include "monty.h"
-#include<stdio.h>
+glob global = {NULL, NULL};
 /**
  * main - the main function
  * @argc: argc
@@ -9,35 +9,35 @@
 
 int main(int argc, char *argv[])
 {
-	char *line = NULL, *token = NULL;
+	char *token = NULL;
 	unsigned int line_number = 0;
-	FILE *file;
 	size_t n = 0;
 	stack_t *head = NULL;
 
 	if (argc != 2)
 	{
 		err("Usage: "), err(argv[0]);
+		fclose(global.file);
 		return (EXIT_FAILURE);
 	}
-	file = fopen(argv[1], "r");
-	if (file == NULL)
+	global.file = fopen(argv[1], "r");
+	if (global.file == NULL)
 	{
 		err("Error: Can't open file "), err(argv[1]);
+		fclose(global.file);
 		return (EXIT_FAILURE);
 	}
-	while ((getline(&line, &n, file) != -1))
+	while ((getline(&(global.saged), &n, global.file) != -1))
 	{
 		line_number++;
-		token = strtok(line, "\r\t\n ");
+		token = strtok(global.saged, "\r\t\n ");
 		if (!token)
 			continue;
 		if (token[0] == '#')
 			continue;
-		selectf(&head, token, line_number, line);
+		selectf(&head, token, line_number, global.saged);
 	}
-	free(line);
-	fclose(file);
+	free(global.saged), fclose(global.file);
 	free_stack(head);
 	return (EXIT_SUCCESS);
 }

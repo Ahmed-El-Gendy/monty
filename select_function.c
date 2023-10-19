@@ -29,8 +29,8 @@ void selectf(stack_t **s, char *token, unsigned int line_num, char *li)
 	{
 		if (cmp(arr[i].opcode, token))
 		{
-			arr[i].f(s, line_num);
 			free(line);
+			arr[i].f(s, line_num);
 			return;
 		}
 	}
@@ -39,8 +39,9 @@ void selectf(stack_t **s, char *token, unsigned int line_num, char *li)
 	write(2, ": unknown  instruction ", 22);
 	write(2, token, _strlen(token));
 	write(2, "\n", 1);
-	free(li);
-	free_stack(*s);
+	free(global.saged);
+	fclose(global.file);
 	free(line);
+	free_stack(*s);
 	exit(EXIT_FAILURE);
 }

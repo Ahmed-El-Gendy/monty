@@ -15,14 +15,14 @@ void pushs(stack_t **stack, unsigned int num)
 	{
 		write(2, "L", 1), write(2, l, _strlen(l));
 		write(2, ": usage: push integer", _strlen(": usage: push integer"));
-		write(2, "\n", 1), free(l);
+		write(2, "\n", 1), free(l), free(global.saged), fclose(global.file);
 		free_stack(*stack), exit(EXIT_FAILURE);
 	}
 	else if (!check(val))
 	{
 		write(2, "L", 1), write(2, l, _strlen(l));
 		write(2, ": usage: push integer", _strlen(": usage: push integer"));
-		write(2, "\n", 1), free(l);
+		write(2, "\n", 1), free(l), free(global.saged), fclose(global.file);
 		free_stack(*stack), exit(EXIT_FAILURE);
 	}
 	else
@@ -33,7 +33,8 @@ void pushs(stack_t **stack, unsigned int num)
 		{
 			write(2, "Error: malloc failed", _strlen("Error: malloc failed"));
 			write(2, "\n", 1);
-			free(new), free(val), free_stack(*stack);
+			free(new), free_stack(*stack);
+			free(global.saged), fclose(global.file);
 			exit(EXIT_FAILURE);
 		}
 		k = _atoi(val), new->n = k;
