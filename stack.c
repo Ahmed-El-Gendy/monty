@@ -32,7 +32,7 @@ int main(int argc, char *argv[])
 		token = strtok(line, "\r\t\n ");
 		if (!token)
 			continue;
-		selectf(&head, token, line_number);
+		selectf(&head, token, line_number, line);
 	}
 	free(line);
 	fclose(file);
