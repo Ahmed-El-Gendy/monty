@@ -8,25 +8,21 @@
 
 int _atoi(char *string)
 {
-	int sign;
-	unsigned int number;
-	char *final;
+    int sign = 1;
+    unsigned int number = 0;
+    char *final = string;
 
-	final = string;
-	number = 0;
-	sign = 1;
-	while (*final != '\0' && (*final < '0' || *final > '9'))
-	{
-		if (*final == '-')
-			sign *= -1;
-		final++;
-	}
-	if (*final != '\0')
-	{
-		do {
-			number = number * 10 + (*final - '0');
-			final++;
-		} while (*final >= '0' && *final <= '9');
-	}
-	return (number * sign);
+    if (*final == '-')
+    {
+        sign = -1;
+        final++;
+    }
+
+    while (*final >= '0' && *final <= '9')
+    {
+        number = number * 10 + (*final - '0');
+        final++;
+    }
+
+    return (number * sign);
 }
