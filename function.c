@@ -19,7 +19,7 @@ int len_stack(stack_t **head)
 
 /**
  * swap - swap
- * @head: head
+ * @stack: head
  * @line_num: int
  */
 void swap(stack_t **stack, unsigned int line_num)
