@@ -12,7 +12,7 @@ int main(int argc, char *argv[])
 	char *line = NULL, *token = NULL;
 	unsigned int line_number = 0;
 	FILE *file;
-	ssize_t  read, len = 0;
+	/*ssize_t  read, len = 0;*/
 	stack_t *head = NULL;
 
 	if (argc != 2)
@@ -26,7 +26,7 @@ int main(int argc, char *argv[])
 		err("Error: Can't open file "), err(argv[1]);
 		return (EXIT_FAILURE);
 	}
-	while ((read = getline(&line, &len, file)) != -1)
+	while (fgets(line, sizeof(line), file) != NULL)
 	{
 		line_number++;
 		token = strtok(line, "\r\t\n ");
