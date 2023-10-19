@@ -29,7 +29,7 @@ void swap(stack_t **stack, unsigned int line_num)
 
 	if (len_stack(stack) < 2)
 	{
-		err("L"), err(st), err(": can't add, stack too short\n");
+		err("L"), err(st), err(": can't swap, stack too short\n");
 		free(st);
 		free_stack(*stack);
 		exit(EXIT_FAILURE);
