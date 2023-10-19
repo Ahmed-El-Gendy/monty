@@ -1,13 +1,2 @@
-<<<<<<< HEAD
-push 65
+push -5
 pchar
-
-
-=======
-push 1
-push 2
-push 10
-push 3
-sub
-pall
->>>>>>> 2d3ffc500b67e21bd11468b002866a22c9b18404
