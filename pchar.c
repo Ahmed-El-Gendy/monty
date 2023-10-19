@@ -7,6 +7,7 @@
 void pchar(stack_t **top, unsigned int line)
 {
 	char s, *st = to_st(line);
+
 	if ((*top) != NULL)
 	{
 		if ((*top)->n >= 0 && (*top)->n <= 127)
