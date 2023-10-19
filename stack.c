@@ -33,8 +33,8 @@ int main(int argc, char *argv[])
 		if (!token)
 			continue;
 		selectf(&head, token, line_number);
-		free(line);
 	}
+	free(line);
 	fclose(file);
 	free_stack(head);
 	return (EXIT_SUCCESS);
