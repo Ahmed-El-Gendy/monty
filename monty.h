@@ -1,6 +1,5 @@
 #ifndef MAIN_H
 #define MAIN_H
-#include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
 #include <unistd.h>
@@ -39,15 +38,6 @@ typedef struct instruction_s
 	void (*f)(stack_t **stack, unsigned int line_number);
 } instruction_t;
 
-
-typedef struct glob_s
-{
-	FILE *file;
-	char *saged;
-} glob;
-extern glob global;
-
-int main(int argc, char **argv);
 void mods(stack_t **stack, unsigned int line_num);
 void divs(stack_t **stack, unsigned int line_num);
 void mul(stack_t **stack, unsigned int line_num);
@@ -65,7 +55,7 @@ void _puts(char *str);
 int cmp(char *input1, char *input2);
 void err(char *st);
 int _atoi(char *string);
-void selectf(stack_t **st, char *token, unsigned int line_num);
+void selectf(stack_t **st, char *token, unsigned int line_num, char *li);
 int len(char **array);
 int check(char *st);
 void free_stack(stack_t *stack);

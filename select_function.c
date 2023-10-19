@@ -3,9 +3,10 @@
  * selectf - select the function required
  * @s: array of strings
  * @token: string
+ * @li: int
  * @line_num: line number of the file
  */
-void selectf(stack_t **s, char *token, unsigned int line_num)
+void selectf(stack_t **s, char *token, unsigned int line_num, char *li)
 {
 	int i = 0;
 	char *line = to_st(line_num);
@@ -28,8 +29,8 @@ void selectf(stack_t **s, char *token, unsigned int line_num)
 	{
 		if (cmp(arr[i].opcode, token))
 		{
-			free(line);
 			arr[i].f(s, line_num);
+			free(line);
 			return;
 		}
 	}
@@ -38,9 +39,8 @@ void selectf(stack_t **s, char *token, unsigned int line_num)
 	write(2, ": unknown  instruction ", 22);
 	write(2, token, _strlen(token));
 	write(2, "\n", 1);
-	free(global.saged);
-	fclose(global.file);
-	free(line);
+	free(li);
 	free_stack(*s);
+	free(line);
 	exit(EXIT_FAILURE);
 }
