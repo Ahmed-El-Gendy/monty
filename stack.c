@@ -35,7 +35,7 @@ int main(int argc, char *argv[])
 			continue;
 		if (token[0] == '#')
 			continue;
-		selectf(&head, token, line_number, global.saged);
+		selectf(&head, token, line_number);
 	}
 	free(global.saged), fclose(global.file);
 	free_stack(head);
