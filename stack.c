@@ -32,7 +32,7 @@ int main(int argc, char *argv[])
 		token = strtok(line, "\r\t\n ");
 		if (!token)
 			continue;
-		if (cmp(token, "#"))
+		if (token[0] == '#')
 			continue;
 		selectf(&head, token, line_number, line);
 	}
