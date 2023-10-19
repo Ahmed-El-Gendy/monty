@@ -6,7 +6,7 @@
  * @li: int
  * @line_num: line number of the file
  */
-void selectf(stack_t **s, char *token, unsigned int line_num, char *li)
+void selectf(stack_t **s, char *token, unsigned int line_num, char *li,FILE *file)
 {
 	int i = 0;
 	char *line = to_st(line_num);
@@ -29,8 +29,8 @@ void selectf(stack_t **s, char *token, unsigned int line_num, char *li)
 	{
 		if (cmp(arr[i].opcode, token))
 		{
-			arr[i].f(s, line_num);
 			free(line);
+			arr[i].f(s, line_num);
 			return;
 		}
 	}
@@ -41,6 +41,6 @@ void selectf(stack_t **s, char *token, unsigned int line_num, char *li)
 	write(2, "\n", 1);
 	free(li);
 	free_stack(*s);
-	free(line);
+	free(line), fclose(file);
 	exit(EXIT_FAILURE);
 }
