@@ -57,6 +57,7 @@ void free_stack(stack_t *stack);
 void free_input(void);
 void pints(stack_t **top, unsigned int line);
 void pops(stack_t **top, unsigned int line);
+void nops(stack_t **top, unsigned int line);
 
 
 
