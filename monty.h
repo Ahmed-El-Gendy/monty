@@ -35,7 +35,7 @@ typedef struct instruction_s
 } instruction_t;
 
 
-
+void mul(stack_t **stack, unsigned int line_num);
 void add(stack_t **stack, unsigned int line_num);
 int len_stack(stack_t **head);
 void swap(stack_t **stack, unsigned int line_num);
