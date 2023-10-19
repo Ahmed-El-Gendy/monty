@@ -25,6 +25,7 @@ void pushs(stack_t **stack, unsigned int num)
 	}
 	else
 	{
+		free(l);
 		new = malloc(sizeof(stack_t));
 		if (!new)
 		{
@@ -37,7 +38,6 @@ void pushs(stack_t **stack, unsigned int num)
 		else
 			new->next = (*stack), (*stack) = new;
 	}
-	free(l);
 }
 /**
  * len - len of array
