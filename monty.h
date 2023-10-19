@@ -47,6 +47,7 @@ typedef struct glob_s
 } glob;
 extern glob global;
 
+int main(int argc, char **argv);
 void mods(stack_t **stack, unsigned int line_num);
 void divs(stack_t **stack, unsigned int line_num);
 void mul(stack_t **stack, unsigned int line_num);

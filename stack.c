@@ -1,5 +1,5 @@
 #include "monty.h"
-glob global = {NULL, NULL};
+
 /**
  * main - the main function
  * @argc: argc
