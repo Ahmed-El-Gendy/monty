@@ -4,6 +4,7 @@
 #include <stdlib.h>
 #include <string.h>
 #include <unistd.h>
+#include<stdio.h>
 
 /**
  * struct stack_s - doubly linked list representation of a stack (or queue)
@@ -21,9 +22,6 @@ typedef struct stack_s
 	struct stack_s *next;
 } stack_t;
 
-extern stack_t *head;
-extern char *value;
-
 /**
  * struct instruction_s - opcode and its function
  * @opcode: the opcode
@@ -38,11 +36,11 @@ typedef struct instruction_s
 	void (*f)(stack_t **stack, unsigned int line_number);
 } instruction_t;
 
-void push(stack_t **stack, unsigned int line);
+void pushs(stack_t **stack, unsigned int line);
 
 void pint(int line);
 void pop(int line);
-void pall(stack_t **stack, unsigned int line);
+void palls(stack_t **stack, unsigned int line);
 char *to_st(int now);
 int _strlen(char *s);
 int _putchar(char c);
@@ -50,8 +48,13 @@ void _puts(char *str);
 int cmp(char *input1, char *input2);
 void err(char *st);
 int _atoi(char *string);
-void selectf(char **array, unsigned int line_num);
-
+void selectf(stack_t **st, char *token, unsigned int line_num);
+int len(char **array);
+int check(char *st);
+void free_stack(stack_t *stack);
+void free_input(void);
+void pints(stack_t **top, unsigned int line);
+void pops(stack_t **top, unsigned int line);
 
 
 
