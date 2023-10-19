@@ -3,6 +3,7 @@
  * selectf - select the function required
  * @s: array of strings
  * @token: string
+ * @li: int
  * @line_num: line number of the file
  */
 void selectf(stack_t **s, char *token, unsigned int line_num, char *li)

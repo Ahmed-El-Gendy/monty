@@ -1,3 +1,9 @@
+<<<<<<< HEAD
 push 10
 push 8
+=======
+push 5
+push 0
+mod
+>>>>>>> 7c0720b5ced640e95e23049f0780c541b80ea199
 pall
