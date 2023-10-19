@@ -1,5 +1,3 @@
-push 5
 push 10
-pall
-div
+push 8
 pall
