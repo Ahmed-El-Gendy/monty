@@ -10,6 +10,12 @@ char *to_st(int now)
 	int i = 0, j;
 
 	st = malloc(sizeof(char) * 20);
+	if (now == 0)
+	{
+		st[0] = '0';
+		st[1] = '\0';
+		return (st);
+	}
 	while (now != 0)
 	{
 		st[i] = (now % 10) + '0';
