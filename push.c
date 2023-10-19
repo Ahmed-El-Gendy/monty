@@ -15,29 +15,21 @@ void pushs(stack_t **stack, unsigned int num)
 	{
 		write(2, "L", 1), write(2, l, _strlen(l));
 		write(2, ": usage: push integer", _strlen(": usage: push integer"));
-<<<<<<< HEAD
 		write(2, "\n", 1);
 		free(val);
 		free(l);
 		free_stack(*stack);
 		exit(EXIT_FAILURE);
-=======
-		write(2, "\n", 1), free(l), exit(EXIT_FAILURE);
->>>>>>> 50b9c2b3999b8f3862accd3939012b455dc4d9fc
 	}
 	else if (!check(val))
 	{
 		write(2, "L", 1), write(2, l, _strlen(l));
 		write(2, ": usage: push integer", _strlen(": usage: push integer"));
-<<<<<<< HEAD
 		write(2, "\n", 1);
 		free(val);
 		free(l);
 		free_stack(*stack);
 		exit(EXIT_FAILURE);
-=======
-		write(2, "\n", 1), free(l), exit(EXIT_FAILURE);
->>>>>>> 50b9c2b3999b8f3862accd3939012b455dc4d9fc
 	}
 	else
 	{

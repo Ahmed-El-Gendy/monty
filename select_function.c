@@ -8,12 +8,8 @@
 void selectf(stack_t **s, char *token, unsigned int line_num)
 {
 	int i = 0;
-<<<<<<< HEAD
-	char *line;
-=======
 	char *line = to_st(line_num);
 
->>>>>>> 50b9c2b3999b8f3862accd3939012b455dc4d9fc
 	instruction_t arr[] = {
 	{"push", pushs},
 	{"pall", palls},
