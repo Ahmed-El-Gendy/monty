@@ -24,7 +24,7 @@ int len_stack(stack_t **head)
  */
 void swap(stack_t **stack, unsigned int line_num)
 {
-	char *st = to_st(line);
+	char *st = to_st(line_num);
 	stack_t *temp, *temp2;
 
 	if (len_stack(stack) < 2)
