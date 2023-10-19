@@ -2,7 +2,7 @@
 /**
  * mul - mul
  * @stack: stack
- * line_num: num
+ * @line_num: num
  */
 void mul(stack_t **stack, unsigned int line_num)
 {
