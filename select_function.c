@@ -34,7 +34,7 @@ void selectf(stack_t **s, char *token, unsigned int line_num)
 	write(2, ": unknown  instruction ", 22);
 	write(2, token, _strlen(token));
 	write(2, "\n", 1);
-	free_stack(*stack);
+	free_stack(*s);
 	free(line);
 	exit(EXIT_FAILURE);
 }
