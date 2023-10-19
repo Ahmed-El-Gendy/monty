@@ -8,11 +8,12 @@ void pops(stack_t **top, unsigned int line)
 {
 	char *st = to_st(line);
 	stack_t *temp;
+
 	if (!(*top))
 	{
-		write(2,"L", 1);
+		write(2, "L", 1);
 		write(2, st, _strlen(st));
-		write(2, ": can't pop an empty stack", _strlen(": can't pop an empty stack"));
+		write(2, ": can't pop an empty stack", 26);
 		free(st);
 		free_stack(*top);
 		exit(EXIT_FAILURE);
@@ -21,5 +22,4 @@ void pops(stack_t **top, unsigned int line)
 	temp = *top;
 	*top = (*top)->next;
 	free(temp);
-	
 }
