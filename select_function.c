@@ -19,10 +19,11 @@ void selectf(stack_t **s, char *token, unsigned int line_num, char *li)
 		{"add", add},
 		{"nop", nops},
 		{"sub", sub},
-		{"mul", mul}
+		{"mul", mul},
+		{"div", divs}
 	};
 
-	for (i = 0; i < 9; i++)
+	for (i = 0; i < 10; i++)
 	{
 		if (cmp(arr[i].opcode, token))
 		{
