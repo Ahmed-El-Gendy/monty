@@ -61,6 +61,6 @@ void pints(stack_t **top, unsigned int line);
 void pops(stack_t **top, unsigned int line);
 void nops(stack_t **top, unsigned int line);
 void sub(stack_t **stack, unsigned int line_num);
-
+void pchar(stack_t **top, unsigned int line);
 
 #endif
