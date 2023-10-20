@@ -17,7 +17,7 @@ int main(int argc, char *argv[])
 
 	if (argc != 2)
 	{
-		err("USAGE: ./"), err(argv[0]),err(" file");
+		err("USAGE: ./"), err(argv[0]), err(" file");
 		return (EXIT_FAILURE);
 	}
 	file = fopen(argv[1], "r");
