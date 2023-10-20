@@ -69,7 +69,7 @@ void rotl(stack_t **top, unsigned int line_num)
 	free(temp);
 	temp = *top;
 	while (temp->next)
-		temp=temp->next;
+		temp = temp->next;
 	new = malloc(sizeof(stack_t));
 	new->n = n;
 	new->next = NULL;
