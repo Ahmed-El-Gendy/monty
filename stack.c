@@ -41,6 +41,8 @@ int main(int argc, char *argv[])
 			continue;
 		if (token[0] == '#')
 			continue;
+		if (cmp(token, "queue"))
+			continue;
 		selectf(&head, token, line_number, line);
 	}
 	free(line);
