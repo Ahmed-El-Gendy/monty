@@ -64,3 +64,28 @@ void add(stack_t **stack, unsigned int line_num)
 	free(*stack);
 	*stack = temp2;
 }
+
+/**
+ * pstr - print string
+ * @stack: head
+ * @line_num: num
+ */
+void pstr(stack_t **stack, unsigned int line_num)
+{
+	stack_t *h = *stack;
+	int i = line_num;
+	char c;
+
+	while (h)
+	{
+		if (h->n > 0 && h->n <= 127)
+		{
+			c = h->n;
+			_putchar(c);
+		}
+		else
+			break;
+		h = h->next;
+	}
+	_putchar('\n');
+}
