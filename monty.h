@@ -35,6 +35,7 @@ typedef struct instruction_s
 	void (*f)(stack_t **stack, unsigned int line_number);
 } instruction_t;
 
+void rotl(stack_t **top, unsigned int line_num);
 void pstr(stack_t **stack, unsigned int line_num);
 void mods(stack_t **stack, unsigned int line_num);
 void divs(stack_t **stack, unsigned int line_num);

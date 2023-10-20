@@ -52,3 +52,26 @@ void divs(stack_t **stack, unsigned int line_num)
 	free(*stack);
 	*stack = temp2;
 }
+
+/**
+ * rotl - rotate top
+ * @top: head
+ * @line_num: int
+ */
+void rotl(stack_t **top, unsigned int line_num)
+{
+	int n = (*top)->n;
+	stack_t *temp, *new;
+
+	line_num = line_num;
+	temp = *top;
+	*top = (*top)->next;
+	free(temp);
+	temp = *top;
+	while (temp->next)
+		temp=temp->next;
+	new = malloc(sizeof(stack_t));
+	new->n = n;
+	new->next = NULL;
+	temp->next = new;
+}
