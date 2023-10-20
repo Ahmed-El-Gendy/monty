@@ -25,10 +25,11 @@ void selectf(stack_t **s, char *token, unsigned int line_num, char *li)
 		{"mod", mods},
 		{"pchar", pchar},
 		{"pstr", pstr},
-		{"rotl", rotl}
+		{"rotl", rotl},
+		{"rotr", rotr}
 	};
 
-	for (i = 0; i < 14; i++)
+	for (i = 0; i < 15; i++)
 	{
 		if (cmp(arr[i].opcode, token))
 		{
