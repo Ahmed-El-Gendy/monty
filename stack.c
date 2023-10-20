@@ -9,15 +9,22 @@
 
 int main(int argc, char *argv[])
 {
-	char *line = NULL, *token = NULL;
+	char *line = NULL, *token = NULL, *errr;
 	unsigned int line_number = 0;
 	FILE *file;
 	size_t n = 0;
+	int i;
 	stack_t *head = NULL;
 
 	if (argc != 2)
 	{
-		err("USAGE: "), err(argv[0]), err(" file\n");
+		err("USAGE: ");
+		errr = malloc(sizeof(char) * _strlen(argv[0]));
+		for (i = 2; i < _strlen(argv[0]); i++)
+			errr[i - 2] = argv[0][i];
+		errr[i - 2] = '\0';
+		err(errr), free(errr);
+		err(" file\n");
 		return (EXIT_FAILURE);
 	}
 	file = fopen(argv[1], "r");
