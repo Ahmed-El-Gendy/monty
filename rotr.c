@@ -20,16 +20,13 @@ void rotr(stack_t **stack, unsigned int line)
 		}
 		if (i == 1)
 			return;
-		temp1 = (*stack)->next;
-		temp2 = NULL;
-		while (temp1)
-		{
-			(*stack)->next = temp2;
-			temp2 = *stack;
-			*stack = temp1;
+		temp1 = *stack;
+		temp2 = *stack;
+		(*stack) = (*stack)->next;
+		while(temp1->next)
 			temp1 = temp1->next;
-		}
-		(*stack)->next = temp2;
+		temp1->next = temp2;
+		temp2->next = NULL;
 	}
 }
 
