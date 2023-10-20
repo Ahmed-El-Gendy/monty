@@ -25,7 +25,7 @@ void selectf(stack_t **s, char *token, unsigned int line_num, char *li)
 		{"mod", mods},
 		{"pchar", pchar},
 		{"pstr", pstr},
-		{"rotl", rotr},
+		{"rotl", rotl},
 		{"rotr", rotr}
 	};
 

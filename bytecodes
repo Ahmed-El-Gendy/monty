@@ -1,3 +1,6 @@
+push 5
+push 3
+push 6
 pall
-rotr
+rotl
 pall

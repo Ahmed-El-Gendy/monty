@@ -34,8 +34,7 @@ typedef struct instruction_s
 	char *opcode;
 	void (*f)(stack_t **stack, unsigned int line_number);
 } instruction_t;
-
-void rotl(stack_t **top, unsigned int line_num);
+void rotr(stack_t **stack, unsigned int line);
 void pstr(stack_t **stack, unsigned int line_num);
 void mods(stack_t **stack, unsigned int line_num);
 void divs(stack_t **stack, unsigned int line_num);
@@ -64,5 +63,5 @@ void pops(stack_t **top, unsigned int line);
 void nops(stack_t **top, unsigned int line);
 void sub(stack_t **stack, unsigned int line_num);
 void pchar(stack_t **top, unsigned int line);
-void rotr(stack_t **stack, unsigned int line);
+void rotl(stack_t **stack, unsigned int lie);
 #endif
