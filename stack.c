@@ -17,13 +17,13 @@ int main(int argc, char *argv[])
 
 	if (argc != 2)
 	{
-		err("Usage: "), err(argv[0]);
+		err("USAGE: ./"), err(argv[0]),err(" file");
 		return (EXIT_FAILURE);
 	}
 	file = fopen(argv[1], "r");
 	if (file == NULL)
 	{
-		err("Error: Can't open file "), err(argv[1]);
+		err("Error: Can't open file "), err(argv[1]), err("\n");
 		return (EXIT_FAILURE);
 	}
 	while ((getline(&line, &n, file) != -1))
