@@ -73,8 +73,9 @@ void add(stack_t **stack, unsigned int line_num)
 void pstr(stack_t **stack, unsigned int line_num)
 {
 	stack_t *h = *stack;
-	int i = line_num;
 	char c;
+
+	line_num = line_num;
 
 	while (h)
 	{
